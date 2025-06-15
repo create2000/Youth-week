@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Dinner Night RSVP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="admin-toggle">
+        <button id="adminBtn" class="admin-btn">Admin</button>
+    </div>
+    <div id="adminLogin" class="admin-modal hidden">
+        <div class="admin-modal-content">
+            <input type="password" id="adminPassword" placeholder="Enter admin password">
+            <button id="loginBtn">Login</button>
+            <button id="closeAdminBtn">Close</button>
+        </div>
+    </div>
+    <div id="adminView" class="admin-view hidden">
+        <h2>Admin View</h2>
+        <p>Total RSVPs: <span id="totalRsvp">0</span></p>
+        <div id="adminAttendeeList"></div>
+        <button id="closeAdminViewBtn">Close Admin View</button>
+    </div>
+    <div class="container">
+        <h1>Catholic Youth Organization of Nigeria</h1>
+        <h2>Youth Dinner Night</h2>
+        <div class="event-details">
+            <p>Date: <span id="eventDate">Sunday, August 10, 2025</span></p>
+            <p>Time: <span id="eventTime">5:00 PM</span></p>
+            <p>Location: <span id="eventLocation">Babcecil Schools</span></p>
+        </div>
+        <div class="input-container">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-container">
+            <label for="dietary">Dietary Restrictions:</label>
+            <input type="text" id="dietary" placeholder="Any dietary restrictions? (Optional)">
+        </div>
+        <p>Will you be attending our upcoming dinner night?</p>
+        
+        <div class="button-container">
+            <button id="yesBtn" class="btn">Yes, I'll be there!</button>
+            <button id="noBtn" class="btn">Sorry, can't make it</button>
+        </div>
+
+        <div id="balloon" class="balloon hidden">
+            <div class="balloon-content">🎈</div>
+        </div>
+
+        <div id="message" class="message hidden"></div>
+        
+        <div id="attendeeList" class="attendee-list hidden">
+            <h3>Current Attendees:</h3>
+            <ul id="attendees"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

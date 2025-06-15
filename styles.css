@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+h2 {
+    color: #1a73e8;
+    margin-bottom: 1rem;
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-container input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.button-container {
+    margin: 2rem 0;
+}
+
+.btn {
+    padding: 12px 24px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#yesBtn {
+    background-color: #1a73e8;
+    color: white;
+}
+
+#noBtn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.balloon {
+    font-size: 50px;
+    position: absolute;
+    animation: fall 3s linear forwards;
+}
+
+.balloon-content {
+    animation: sway 2s ease-in-out infinite alternate;
+    display: inline-block;
+}
+.event-details p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: translateX(-15px);
+    }
+    100% {
+        transform: translateX(15px);
+    }
+}
+
+.balloon.pop {
+    animation: pop 0.3s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #1a73e8;
+}
+
+.attendee-list {
+    margin-top: 30px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.attendee-list h3 {
+    color: #1a73e8;
+    text-align: center;
+}
+
+.attendee-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.attendee-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+@keyframes pop {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
+}
+
+.admin-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.admin-btn {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.admin-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.admin-modal.hidden {
+    display: none;
+}
+
+.admin-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    min-width: 300px;
+}
+
+#closeAdminBtn {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#loginBtn {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.admin-modal-content input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+}
+
+.admin-view {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    max-width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
